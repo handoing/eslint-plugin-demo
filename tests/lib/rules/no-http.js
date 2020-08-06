@@ -8,7 +8,7 @@
 // Requirements
 //------------------------------------------------------------------------------
 
-var rule = require("../../../lib/rules/no-global"),
+var rule = require("../../../lib/rules/no-http"),
 
     RuleTester = require("eslint").RuleTester;
 
@@ -23,10 +23,10 @@ var ruleTester = new RuleTester({
     "sourceType": "module"
   }
 });
-ruleTester.run("no-global", rule, {
+ruleTester.run("no-http", rule, {
 
     valid: [
-        "var name = 'test';"
+        "const img = 'https' + '://xxx.jpg';"
     ],
 
     invalid: [
